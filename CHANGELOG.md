@@ -1,3 +1,9 @@
+## 1.0.1
+
+* 🚀 Project alignment with the correct GitHub repository
+* 🔐 Security: Removed hardcoded API keys in example app and README
+* 🔧 Fixed repository URLs in `pubspec.yaml` and DevTools extension
+
 ## 1.0.0
 
 * 🎉 Initial release

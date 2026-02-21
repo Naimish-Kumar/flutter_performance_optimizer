@@ -3,7 +3,7 @@ description: >
   A powerful developer tool that automatically detects performance issues in Flutter apps
   and provides actionable suggestions. Identify rebuild problems, memory leaks, heavy widgets,
   and slow animations — all in real time. Build faster, smoother apps with confidence.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Naimish-Kumar/flutter_performance_optimizer
 repository: https://github.com/Naimish-Kumar/flutter_performance_optimizer
 issue_tracker: https://github.com/Naimish-Kumar/flutter_performance_optimizer/issues
