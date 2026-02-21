@@ -1,9 +1,9 @@
 name: flutter_performance_optimizer
 description: A powerful developer tool to detect performance issues (rebuilds, memory leaks, jank) with real-time AI-powered optimization suggestions.
 version: 1.0.1
-homepage: https://github.com/Naimish-Kumar/flutter_performance_optimizer
-repository: https://github.com/Naimish-Kumar/flutter_performance_optimizer
-issue_tracker: https://github.com/Naimish-Kumar/flutter_performance_optimizer/issues
+homepage: https://github.com/Naimish-Kumar/flutter_performance_optimizer/
+repository: https://github.com/Naimish-Kumar/flutter_performance_optimizer/
+issue_tracker: https://github.com/Naimish-Kumar/flutter_performance_optimizer/issues/
 topics:
   - performance
   - debugging
@@ -28,6 +28,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-false_secrets:
-  - /example/lib/main.dart
