@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 /// Performance history timeline chart.
 class TimelineChart extends StatelessWidget {
+  /// Creates a [TimelineChart].
   const TimelineChart({super.key, required this.history});
 
+  /// The list of performance snapshots to display.
   final List<dynamic> history;
 
   @override

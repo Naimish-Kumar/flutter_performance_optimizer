@@ -28,11 +28,15 @@ class SuggestionEngine {
   /// Singleton instance.
   static SuggestionEngine get instance => _instance;
 
-  /// Generates a list of optimization suggestions based on current metrics.
+  /// List of heuristic-based suggestions.
   final List<OptimizationSuggestion> _suggestions = [];
+
+  /// List of AI-generated suggestions.
   final List<OptimizationSuggestion> _aiSuggestions = [];
+
   bool _isAnalyzingAI = false;
 
+  /// Generates a list of optimization suggestions based on current metrics.
   List<OptimizationSuggestion> generateSuggestions() {
     _suggestions.clear();
     // _aiSuggestions are updated asynchronously, so we don't clear them here

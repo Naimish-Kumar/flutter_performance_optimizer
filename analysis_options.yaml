@@ -15,7 +15,7 @@ linter:
     avoid_print: false # Allowed for this package
     
     # Best Practices
-    # public_member_api_docs: true # Good for published packages
+    public_member_api_docs: true # Good for published packages
     
     # Style
     prefer_single_quotes: true

@@ -4,6 +4,7 @@ import '../trackers/rebuild_tracker.dart';
 
 /// Overlay that visualizes a heatmap of widget rebuilds.
 class HeatmapOverlay extends StatefulWidget {
+  /// Creates a [HeatmapOverlay].
   const HeatmapOverlay({super.key});
 
   @override

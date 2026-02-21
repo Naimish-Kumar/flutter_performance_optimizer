@@ -223,10 +223,11 @@ class _MemorySnapshot {
   final DateTime timestamp;
 }
 
-/// Internal utility for memory estimation.
+/// Internal utility for estimating memory usage via RSS.
 class MemoryProcessInfo {
   MemoryProcessInfo._();
 
+  /// Gets the current RSS (Resident Set Size) memory usage.
   static int get currentRss {
     if (kIsWeb) return 0;
     try {
