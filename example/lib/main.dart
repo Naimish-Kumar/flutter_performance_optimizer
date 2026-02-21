@@ -5,9 +5,10 @@ import 'package:flutter_performance_optimizer/flutter_performance_optimizer.dart
 void main() {
   // Enable AI Optimization Suggestions
   AISuggestionService.instance.enabled = true;
-  // Set your Gemini API Key here
-  AISuggestionService.instance.apiKey =
-      'AIzaSyD-YP_y-WFTxPYdFZZXCWuH8ALCZ0z3JV8';
+  // Set your Gemini API Key using --dart-define=GEMINI_API_KEY=your_key
+  AISuggestionService.instance.apiKey = const String.fromEnvironment(
+    'GEMINI_API_KEY',
+  );
 
   runApp(
     PerformanceOptimizer(
