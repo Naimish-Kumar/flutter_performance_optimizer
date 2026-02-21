@@ -1,0 +1,36 @@
+name: flutter_performance_optimizer
+description: >
+  A powerful developer tool that automatically detects performance issues in Flutter apps
+  and provides actionable suggestions. Identify rebuild problems, memory leaks, heavy widgets,
+  and slow animations — all in real time. Build faster, smoother apps with confidence.
+version: 1.0.0
+homepage: https://github.com/flutterdev/flutter_performance_optimizer
+repository: https://github.com/flutterdev/flutter_performance_optimizer
+issue_tracker: https://github.com/flutterdev/flutter_performance_optimizer/issues
+topics:
+  - performance
+  - debugging
+  - developer-tools
+  - optimization
+  - monitoring
+
+environment:
+  sdk: ^3.7.0
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  google_generative_ai: ^0.4.7
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  devtools_extensions: ^0.1.0
+
+flutter:
+  uses-material-design: true
+
+false_secrets:
+  - /example/lib/main.dart
