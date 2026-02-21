@@ -444,8 +444,14 @@ The optimizer includes a heuristic AI engine supplemented by **Gemini 1.5 Flash*
 ```dart
 // The engine is powered by Gemini for deep insights
 AISuggestionService.instance.enabled = true;
-// You can override the default API Key if needed
-AISuggestionService.instance.apiKey = 'YOUR_CUSTOM_KEY';
+// Recommended: Set your API Key via --dart-define=GEMINI_API_KEY=your_key
+AISuggestionService.instance.apiKey = const String.fromEnvironment('GEMINI_API_KEY');
+```
+
+Alternatively, you can set it directly (not recommended for public repositories):
+
+```dart
+AISuggestionService.instance.apiKey = 'YOUR_API_KEY';
 ```
 
 ### 🧪 CI/CD Performance Testing
