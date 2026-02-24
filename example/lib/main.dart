@@ -32,7 +32,9 @@ void main() {
   );
 }
 
+/// Main application widget for the demo.
 class MyApp extends StatelessWidget {
+  /// Creates a [MyApp] widget.
   const MyApp({super.key});
 
   @override
@@ -52,7 +54,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// Main home page for the performance demo.
 class DemoHomePage extends StatefulWidget {
+  /// Creates a [DemoHomePage] widget.
   const DemoHomePage({super.key});
 
   @override

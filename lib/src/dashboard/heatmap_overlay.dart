@@ -40,6 +40,7 @@ class _HeatmapOverlayState extends State<HeatmapOverlay>
 
         return IgnorePointer(
           child: Stack(
+            alignment: Alignment.topLeft,
             children:
                 positions.entries.map((entry) {
                   final name = entry.key;

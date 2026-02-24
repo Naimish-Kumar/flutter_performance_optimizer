@@ -97,6 +97,7 @@ class _PerformanceInspectorState extends State<PerformanceInspector> {
 
     if (widget.showBadge) {
       return Stack(
+        alignment: Alignment.topLeft,
         children: [
           widget.child,
           Positioned(

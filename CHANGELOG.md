@@ -1,3 +1,9 @@
+## 1.0.2
+
+* 🔧 Fixed "No Directionality widget found" error when using `PerformanceOptimizer` at the root of the app.
+* 🛠️ Updated `Stack` widgets to use non-directional alignment to prevent crashes when `Directionality` is missing.
+* 📦 Improved initialization logic to safely wrap content in a default `Directionality` if none is provided.
+
 ## 1.0.1
 
 * 🚀 Project alignment with the correct GitHub repository

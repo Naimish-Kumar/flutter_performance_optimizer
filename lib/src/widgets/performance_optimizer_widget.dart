@@ -376,10 +376,23 @@ class _PerformanceOptimizerState extends State<PerformanceOptimizer> {
       children.add(DashboardOverlay(config: _config));
     }
 
+    Widget result;
     if (children.length > 1) {
-      return Stack(children: children);
+      result = Stack(
+        alignment: Alignment.topLeft, // Use non-directional alignment
+        children: children,
+      );
+    } else {
+      result = widget.child;
     }
 
-    return widget.child;
+    // Ensure there is a Directionality widget in the tree.
+    // This is necessary because PerformanceOptimizer is often used at the root
+    // of the application, above MaterialApp/WidgetsApp.
+    if (Directionality.maybeOf(context) == null) {
+      return Directionality(textDirection: TextDirection.ltr, child: result);
+    }
+
+    return result;
   }
 }
