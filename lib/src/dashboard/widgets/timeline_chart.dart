@@ -22,75 +22,77 @@ class TimelineChart extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'FPS Trend (Last 100 snapshots)',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 11,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Container(
-            height: 120,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color(0xFF0D0E1A),
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: const Color(0xFF2D2F4A)),
-            ),
-            child: CustomPaint(
-              painter: _TimelinePainter(
-                data: history.map((s) => s.fps as double).toList(),
-                maxValue: 65,
-                color: const Color(0xFF4CAF50),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'FPS Trend (Last 100 snapshots)',
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Memory Trend (MB)',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 11,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Container(
-            height: 120,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color(0xFF0D0E1A),
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: const Color(0xFF2D2F4A)),
-            ),
-            child: CustomPaint(
-              painter: _TimelinePainter(
-                data: history.map((s) => s.memoryUsageMB as double).toList(),
-                maxValue: 1000,
-                color: const Color(0xFF2196F3),
+            const SizedBox(height: 8),
+            Container(
+              height: 120,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xFF0D0E1A),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: const Color(0xFF2D2F4A)),
+              ),
+              child: CustomPaint(
+                painter: _TimelinePainter(
+                  data: history.map((s) => s.fps as double).toList(),
+                  maxValue: 65,
+                  color: const Color(0xFF4CAF50),
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Snapshots: ${history.length}',
-                style: const TextStyle(color: Colors.white38, fontSize: 9),
+            const SizedBox(height: 16),
+            const Text(
+              'Memory Trend (MB)',
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
               ),
-              const Text(
-                'Scale: Auto',
-                style: TextStyle(color: Colors.white38, fontSize: 9),
+            ),
+            const SizedBox(height: 8),
+            Container(
+              height: 120,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xFF0D0E1A),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: const Color(0xFF2D2F4A)),
               ),
-            ],
-          ),
-        ],
+              child: CustomPaint(
+                painter: _TimelinePainter(
+                  data: history.map((s) => s.memoryUsageMB as double).toList(),
+                  maxValue: 1000,
+                  color: const Color(0xFF2196F3),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Snapshots: ${history.length}',
+                  style: const TextStyle(color: Colors.white38, fontSize: 9),
+                ),
+                const Text(
+                  'Scale: Auto',
+                  style: TextStyle(color: Colors.white38, fontSize: 9),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

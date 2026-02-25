@@ -82,13 +82,28 @@ import 'package:flutter_performance_optimizer/flutter_performance_optimizer.dart
 
 void main() {
   runApp(
-    PerformanceOptimizer(
-      enabled: true,
-      child: MyApp(),
-    ),
+    MyApp(),
   );
 }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp( // Or GetMaterialApp
+      // ... other properties
+      builder: (context, child) {
+        return PerformanceOptimizer(
+          enabled: true,
+          showDashboard: true,
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
+    );
+  }
+}
 ```
+
+> **Important**: Always use `PerformanceOptimizer` inside the `builder` property of your `MaterialApp`, `CupertinoApp`, or `GetMaterialApp`. Placing it directly inside `runApp()` can cause a "No MaterialLocalizations found" exception because the optimizer relies on Material components that require a localization context.
 
 That's it ✅ — The optimizer will start monitoring automatically.
 
@@ -96,12 +111,16 @@ That's it ✅ — The optimizer will start monitoring automatically.
 
 ## 🖥 Performance Dashboard Overlay
 
-Enable the floating dashboard:
+Enable the floating dashboard by setting `showDashboard: true` in your configuration:
 
 ```dart
-PerformanceOptimizer(
-  showDashboard: true,
-  child: MyApp(),
+MaterialApp(
+  builder: (context, child) {
+    return PerformanceOptimizer(
+      showDashboard: true,
+      child: child ?? const SizedBox.shrink(),
+    );
+  },
 );
 ```
 
